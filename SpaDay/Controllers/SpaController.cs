@@ -39,9 +39,14 @@ namespace SpaDay.Controllers
         }
 
         [HttpPost]
-        [Route("/spa")]
+        [Route("/spa/submission")]
         public IActionResult Menu(string name, string skintype, string manipedi)
         {
+
+            ViewBag.Name = name;
+            ViewBag.Nails = manipedi;
+            ViewBag.Skin = skintype;
+
             List<string> facials = new List<string>()
             {
                 "Microdermabrasion", "Hydrofacial", "Rejuvenating", "Enzyme Peel"
@@ -55,6 +60,9 @@ namespace SpaDay.Controllers
                     appropriateFacials.Add(facials[i]);
                 }
             }
+
+            ViewBag.AppropriateFacials = appropriateFacials;
+
             return View();
         }
 

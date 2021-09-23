@@ -32,6 +32,10 @@
     }
     <br>
     Password:
+    @if (ViewBag.alert == true)
+    {
+        <p>@ViewBag.alert</p>
+    }
     <input type="password" name="password" />
     <br>
     Confirm Password:

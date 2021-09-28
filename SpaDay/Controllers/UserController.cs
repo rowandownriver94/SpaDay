@@ -29,7 +29,7 @@ namespace SpaDay.Controllers
         {
             if (ModelState.IsValid)
             {
-                User user = new User
+                User user = new User()
                 {
                     Username = newUser.Username,
                     Email = newUser.Email,
@@ -37,9 +37,13 @@ namespace SpaDay.Controllers
                 };
 
                 return View("Index", user);
+
             }
 
             return View("Add", newUser);
+
+
+
         }
 
     }

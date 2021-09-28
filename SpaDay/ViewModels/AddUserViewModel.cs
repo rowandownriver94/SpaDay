@@ -20,8 +20,8 @@ namespace SpaDay.ViewModels
         public string Password { get; set; }
 
         [Required(ErrorMessage = "Please re-enter your password.")]
-        [StringLength(20, MinimumLength = 6, ErrorMessage = "Password must be between 6 and 20 characters.")]
-        public string VerifyPassword { get; }
+        [Compare("Password", ErrorMessage = "Passwords must match!")]
+        public string VerifyPassword { get; set; }
 
         public AddUserViewModel(string username, string email, string password, string verifyPassword)
         {
